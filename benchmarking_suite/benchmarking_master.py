@@ -2,6 +2,8 @@
 import os
 import subprocess
 
+assert 0
+
 burg = '/burg/berkelbach/users/eav2136'
 moto = '/moto/berkelbach/users/eav2136'
 

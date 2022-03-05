@@ -1,0 +1,38 @@
+mol new {/burg/berkelbach/users/eav2136/Documents/cci/peroxides/final_data_casscf/density_difference.cube} type {cube} first 0 last -1 step 1 waitfor 1 volsets {0 }
+
+axes location off
+color Display Background white
+
+mol delrep 0 0
+
+mol color Element
+mol representation VDW 0.100000 100.000000
+mol selection all
+mol material Opaque
+mol addrep 0
+
+mol color Element
+mol representation Bonds 0.000000 100.000000
+mol selection all
+mol material Opaque
+mol addrep 0
+
+mol color Volume 0
+mol representation Isosurface -0.000500 0 0 0 1 1
+mol selection all
+mol material Opaque
+mol addrep 0
+mol scaleminmax 0 2 -0.000500 0.000500
+
+mol color Volume 0
+mol representation Isosurface 0.000500 0 0 0 1 1
+mol selection all
+mol material Opaque
+mol addrep 0
+mol scaleminmax 0 3 -0.000500 0.000500
+
+rotate y by -90
+rotate x by -45
+
+render TachyonInternal /burg/berkelbach/users/eav2136/Documents/cci/peroxides/final_data_visualization/density_difference.tga
+exit
