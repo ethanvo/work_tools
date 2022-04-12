@@ -1,0 +1,25 @@
+'''Overall workflow.'''
+
+import json
+import shutil
+from os import getcwd, chdir
+from os.path import exists, relpath
+from miscripts.ccq_sub_py import qsub as subpy
+from ase.data.pubchem import pubchem_atoms_search
+
+PYSUB = dict(queue='gen', extra_mods=['down'])
+
+def jsondump(data,loc):
+  with open(loc,'w') as outf:
+    json.dump(data,outf,indent='  ')
+
+def subscript(fn,loc,**subargs):
+  shutil.copy(f"transformations/{fn}",loc+'/'+fn)
+  cwd = getcwd()
+  chdir(loc)
+  subpy(fn,**subargs)
+  chdir(cwd)
+
+include: "snakes/scf.smk"
+include: "snakes/mcscf.smk"
+include: "snakes/afqmc.smk"
