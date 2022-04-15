@@ -1,0 +1,13 @@
+#%Module -*- tcl -*-
+set     pkg         vmd
+set     version     1.9.3
+set     root        /burg/berkelbach/users/eav2136/builds/vmd/1.9.3/vmd
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+prepend-path PATH $root/bin
+prepend-path LD_LIBRARY_PATH $root/lib

@@ -1,0 +1,14 @@
+#%Module -*- tcl -*-
+set     pkg         pyscf
+set     version     gcc-openblas
+set     root        /burg/berkelbach/users/eav2136/builds/pyscf/gcc-openblas/pyscf
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+system . /burg/berkelbach/users/eav2136/builds/spack/develop/spack/share/spack/setup-env.sh
+system spack env activate -p pyscf-gcc-openblas
+prepend-path PYTHONPATH $root
