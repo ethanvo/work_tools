@@ -2,7 +2,6 @@
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
-import pandas as pd
 from cycler import cycler
 
 # Set default sans-serif font to Arial
