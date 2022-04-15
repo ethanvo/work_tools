@@ -1,6 +1,9 @@
 #!/usr/bin/env python
+import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
+import pandas as pd
+from cycler import cycler
 
 # Set default sans-serif font to Arial
 matplotlib.rcParams['font.sans-serif'] = 'Arial'
@@ -8,15 +11,23 @@ matplotlib.rcParams['font.sans-serif'] = 'Arial'
 # Set default to sans-serif
 matplotlib.rcParams['font.family'] = 'sans-serif'
 
-# Accessible colors
-color_1 = '#648FFF'
-color_2 = '#DC267F'
-color_3 = '#FFB000'
-color_4 = '#785EF0'
-color_5 = '#FE6100'
+# Set color palette
+matplotlib.rcParams['axes.prop_cycle'] = cycler('color', ['#648FFF', '#DC267F', '#FFB000', '#785EF0', '#FE6100'])
+
+# Set Font Size
+matplotlib.rcParams['font.size'] = 16
+
+# Set Line Width
+matplotlib.rcParams['lines.linewidth'] = 2
+
+# Set Axes Line Width
+matplotlib.rcParams['axes.linewidth'] = 1
+
+# Set Legend Frame Off
+matplotlib.rcParams['legend.frameon'] = False
 
 # Example plot
-
+'''
 fig, ax = plt.subplots(1, 1, figsize=(5, 5), dpi=600)
 ax.plot(r, zerofield_shift, label='CASSCF 0 V/nm', color='b')
 ax.legend()
@@ -30,3 +41,4 @@ ax.spines['top'].set_visible(False)
 plt.tight_layout()
 
 plt.savefig('dissociation_shift_dft.svg')
+'''
