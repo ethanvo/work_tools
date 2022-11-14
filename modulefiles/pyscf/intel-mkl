@@ -1,0 +1,14 @@
+#%Module -*- tcl -*-
+set     pkg         pyscf
+set     version     intel-mkl
+set     root        /burg/berkelbach/users/eav2136/builds/pyscf/intel-mkl/pyscf
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+system . /burg/berkelbach/users/eav2136/builds/spack/develop/spack/share/spack/setup-env.sh
+system spack env activate -p pyscf-intel-mkl
+prepend-path PYTHONPATH $root

@@ -1,0 +1,18 @@
+#%Module -*- tcl -*-
+set     pkg         orca
+set     version     5.0.1
+set     root        /burg/berkelbach/users/eav2136/builds/orca/5.0.1/orca/
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+module load openmpi/gcc/64/4.1.1_cuda_11.0.3_aware
+module load cuda11.0/toolkit/11.0.3
+module load ucx/1.8.1
+prepend-path PATH $root
+prepend-path LD_LIBRARY_PATH $root
+prepend-path LD_LIBRARY_PATH /cm/shared/apps/cuda11.0/toolkit/11.0.3/compat/
+setenv RSH_COMMAND /usr/bin/ssh

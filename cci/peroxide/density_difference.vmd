@@ -1,5 +1,6 @@
 mol new {/burg/berkelbach/users/eav2136/Documents/cci/peroxides/final_data_casscf/density_difference.cube} type {cube} first 0 last -1 step 1 waitfor 1 volsets {0 }
 
+display resize 1000 1000
 axes location off
 color Display Background white
 
