@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 from cycler import cycler
 
 # Set default sans-serif font to Arial
-matplotlib.rcParams['font.sans-serif'] = 'Arial'
+matplotlib.rcParams['font.serif'] = 'Times New Roman'
 
 # Set default to sans-serif
-matplotlib.rcParams['font.family'] = 'sans-serif'
+matplotlib.rcParams['font.family'] = 'serif'
 
 # Set color palette
 matplotlib.rcParams['axes.prop_cycle'] = cycler('color', ['#648FFF', '#DC267F', '#FFB000', '#785EF0', '#FE6100'])
@@ -23,7 +23,7 @@ matplotlib.rcParams['lines.linewidth'] = 2
 matplotlib.rcParams['axes.linewidth'] = 1
 
 # Set Legend Frame Off
-matplotlib.rcParams['legend.frameon'] = False
+matplotlib.rcParams['legend.frameon'] = True
 
 # Example plot
 '''
