@@ -5,28 +5,50 @@ import matplotlib.pyplot as plt
 from cycler import cycler
 
 # Set default sans-serif font to Arial
-matplotlib.rcParams['font.serif'] = 'Times New Roman'
+matplotlib.rcParams["font.serif"] = "Times New Roman"
 
 # Set default to sans-serif
-matplotlib.rcParams['font.family'] = 'serif'
+matplotlib.rcParams["font.family"] = "serif"
 
 # Set color palette
-matplotlib.rcParams['axes.prop_cycle'] = cycler('color', ['#648FFF', '#DC267F', '#FFB000', '#785EF0', '#FE6100'])
+matplotlib.rcParams["axes.prop_cycle"] = cycler(
+    "color", ["#4877CF", "#ed844a", "#6aca64", "#FFB000", "#FE6100"]
+)
 
 # Set Font Size
-matplotlib.rcParams['font.size'] = 16
+matplotlib.rcParams["font.size"] = 12
 
 # Set Line Width
-matplotlib.rcParams['lines.linewidth'] = 2
+matplotlib.rcParams["lines.linewidth"] = 2
 
 # Set Axes Line Width
-matplotlib.rcParams['axes.linewidth'] = 1
+matplotlib.rcParams["axes.linewidth"] = 1
 
 # Set Legend Frame Off
-matplotlib.rcParams['legend.frameon'] = True
+matplotlib.rcParams["legend.frameon"] = True
 
+# Make x-tick direction in
+matplotlib.rcParams["xtick.direction"] = "in"
+
+# Make y-tick direction in
+matplotlib.rcParams["ytick.direction"] = "in"
+
+# Make x-axis minor ticks visible
+matplotlib.rcParams["xtick.minor.visible"] = True
+
+# Make y-axis minor ticks visible
+matplotlib.rcParams["ytick.minor.visible"] = True
+
+# Make top x-axis ticks visible
+matplotlib.rcParams["xtick.top"] = True
+
+# Make right y-axis ticks visible
+matplotlib.rcParams["ytick.right"] = True
+
+# Save figures as png
+matplotlib.rcParams["savefig.format"] = "png"
 # Example plot
-'''
+"""
 fig, ax = plt.subplots(1, 1, figsize=(5, 5), dpi=600)
 ax.plot(r, zerofield_shift, label='CASSCF 0 V/nm', color='b')
 ax.legend()
@@ -40,4 +62,4 @@ ax.spines['top'].set_visible(False)
 plt.tight_layout()
 
 plt.savefig('dissociation_shift_dft.svg')
-'''
+"""
