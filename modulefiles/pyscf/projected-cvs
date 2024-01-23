@@ -1,0 +1,21 @@
+#%Module -*- tcl -*-
+set     pkg         pyscf
+set     version     projected-cvs
+set     root        /burg/berkelbach/users/eav2136/builds/pyscf/projected-cvs/pyscf
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+module load gcc/13.0.1
+system . /burg/berkelbach/users/eav2136/builds/spack/develop/spack/share/spack/setup-env.sh
+system spack load gcc@13.2.0
+system spack load intel-oneapi-compilers
+system spack load intel-oneapi-mpi%gcc
+system spack load intel-oneapi-mkl
+system spack load python@3.10.12
+system spack env activate -p pyscf
+prepend-path PYTHONPATH $root
+prepend-path PYTHONPATH /burg/berkelbach/users/eav2136/builds/work_tools/utilities

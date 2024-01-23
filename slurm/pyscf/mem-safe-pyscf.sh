@@ -12,8 +12,7 @@
 #SBATCH --time=5-00:00:00
 #SBATCH --mem=716800MB
 
-export PYTHONPATH=/burg/berkelbach/users/eav2136/builds/work_tools/utilities:$PYTHONPATH
-export MODULEPATH=/burg/berkelbach/users/eav2136/modulefiles:$MODULEPATH
+export MODULEPATH=/burg/berkelbach/users/eav2136/builds/work_tools/modulefiles:$MODULEPATH
 cd ${SLURM_SUBMIT_DIR}
 module load pyscf/projected-cvs
 export PYSCF_MAX_MEMORY=$(bc <<< "$SLURM_MEM_PER_NODE / 1.434 / 1")
