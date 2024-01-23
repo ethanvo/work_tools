@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 from cycler import cycler
 
 # Set default sans-serif font to Arial
-matplotlib.rcParams["font.serif"] = "Times New Roman"
+matplotlib.rcParams["font.serif"] = "Roboto"
 
 # Set default to sans-serif
-matplotlib.rcParams["font.family"] = "serif"
+matplotlib.rcParams["font.family"] = "sans-serif"
 
 # Set color palette
 matplotlib.rcParams["axes.prop_cycle"] = cycler(
@@ -47,6 +47,12 @@ matplotlib.rcParams["ytick.right"] = True
 
 # Save figures as png
 matplotlib.rcParams["savefig.format"] = "png"
+
+# Set figure dpi to 600
+matplotlib.rcParams["savefig.dpi"] = 600
+
+# Set figure dpi to 600
+matplotlib.rcParams["figure.dpi"] = 600
 # Example plot
 """
 fig, ax = plt.subplots(1, 1, figsize=(5, 5), dpi=600)
