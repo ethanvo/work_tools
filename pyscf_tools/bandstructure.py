@@ -49,7 +49,8 @@ def get_all_electron_bandstructure(formula, cell, path, npoints, kmesh=[2, 2, 2]
         with h5py.File(e_kn_file, "w") as f:
             f.create_dataset("e_kn", data=e_kn)
     if output_file is not None:
-        dump({"vbmax_k": vbmax_k, "cbmin_k": cbmin_k, "g_vbmax": g_vbmax, "g_cbmin": g_cbmin}, output_file)
+        # print vbmax_k, cbmin_k, g_vbmax, g_cbmin types
+        dump({"vbmax_k": vbmax_k, "cbmin_k": cbmin_k.tolist(), "vbmax_kpt": band_kpts_scaled[vbmax_k].tolist(), "cbmin_kpt": band_kpts_scaled[cbmin_k[0]].tolist(), "g_vbmax": g_vbmax, "g_cbmin": g_cbmin}, output_file)
     vbmax_kpt = band_kpts_scaled[vbmax_k]
     cbmin_kpt = band_kpts_scaled[cbmin_k[0]]
     return vbmax_kpt, cbmin_kpt, g_vbmax, g_cbmin
