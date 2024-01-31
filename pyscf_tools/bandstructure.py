@@ -29,7 +29,7 @@ def get_all_electron_bandstructure(formula, cell, path, npoints, kmesh=[2, 2, 2]
     dm = None
     for kcenter in band_kpts_scaled:
         kpts = cell.make_kpts(kmesh, scaled_center=kcenter)
-        mymf = scf.KRHF(cell, ktps=kpts, exxdiv="ewald").density_fit()
+        mymf = scf.KRHF(cell, kpts=kpts, exxdiv="ewald").density_fit()
         escf = mymf.kernel(dm0=dm)
         e_kn.append(mymf.mo_energy[0])
     vbmax = -np.inf

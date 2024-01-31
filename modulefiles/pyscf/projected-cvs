@@ -19,3 +19,4 @@ system spack load python@3.10.12
 system spack env activate -p pyscf
 prepend-path PYTHONPATH $root
 prepend-path PYTHONPATH /burg/berkelbach/users/eav2136/builds/work_tools/utilities
+prepend-path PYTHONPATH /burg/berkelbach/users/eav2136/builds/work_tools/pyscf_tools
